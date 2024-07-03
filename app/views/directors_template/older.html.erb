@@ -1,0 +1,4 @@
+<% matching_oldest = Director.where.not({ :dob => nil }).order({ :dob => :asc })%>
+<%the_oldest = matching_oldest.at(0)%>
+
+<p> The youngest director we heve in our data base is <%=the_oldest.name%> born <%= the_oldest.dob%></p>
